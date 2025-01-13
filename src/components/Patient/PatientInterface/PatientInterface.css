@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+
+  
+  .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    grid-template-rows: repeat(2, auto); /* 2 rows */
+    gap: 20px; /* Space between the cards */
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .card {
+
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+  .footer {
+    background-color: #f8f9fa; /* Equivalent to bg-body-tertiary */
+  }
+  
+  .footer-copyright {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+  
+  .btn-link {
+    color: inherit; /* Ensures the text color matches the current color scheme */
+    text-decoration: none;
+  }
+  
+  .btn-link:hover {
+    color: #6c757d; /* Light gray for hover effect */
+  }
+  
+  .btn-floating {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    transition: background-color 0.2s;
+  }
+  
+  .btn-floating:hover {
+    background-color: rgba(0, 0, 0, 0.1); /* Light hover effect */
+  }
+  
+  .text-body {
+    color: #212529; /* Equivalent to text-body in MDB */
+  }
+  
+  .text-body:hover {
+    color: #000; /* Darker shade on hover */
+  }
+  
+ 
