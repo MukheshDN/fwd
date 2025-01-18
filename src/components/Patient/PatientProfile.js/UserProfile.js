@@ -11,6 +11,7 @@ const UserProfile = () => {
 
   // Set up state for phone number, address, and error message
   const [phonenumber, setPhonenumber] = useState("");
+  const [surname, setSurname] = useState("");
   const [address1, setAddress1] = useState("");
   const [address2, setAddress2] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
@@ -60,6 +61,7 @@ const UserProfile = () => {
       const response = await api.post("/api/v1/user/updateUserProfile", {
         token,
         phonenumber,
+        surname,
         address1,
         address2,
       });
@@ -117,7 +119,8 @@ const UserProfile = () => {
                       type="text"
                       className="form-control"
                       placeholder="surname"
-                      value=""
+                      value={surname}
+                      onChange={(e) => setSurname(e.target.value)}
                     />
                   </div>
                 </div>

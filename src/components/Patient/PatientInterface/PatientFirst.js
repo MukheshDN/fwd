@@ -50,12 +50,6 @@ const PatientFirst = () => {
     fetchUserDetails();
   }, []);
 
-  const handleNavigate = () => {
-    navigate("/api/v1/Patient/login/profile", {
-      state: { name: userDetails.name, email: userDetails.email },
-    });
-  };
-
   useEffect(() => {
     const fetchDoctorDetails = async () => {
       try {
@@ -73,12 +67,38 @@ const PatientFirst = () => {
     fetchDoctorDetails();
   }, []);
 
+  // Handle book appointment
+  const handleBookAppointment = async (doctorId) => {
+    try {
+      const token = localStorage.getItem("Token");
+      if (!token) {
+        console.error("No token found, please login.");
+        return;
+      }
+
+      const response = await api.post("/connectUserToDoctor", {
+        token,
+        doctorId,
+      });
+
+      if (response.data.success) {
+        alert("Appointment booked successfully!");
+      } else {
+        console.error("Failed to book appointment:", response.data.message);
+        alert("Failed to book appointment. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error while booking appointment:", error);
+      alert("An error occurred. Please try again later.");
+    }
+  };
+
   return (
     <div>
       <PatientNavbar />
       <div className="container">
         {/* Display user details */}
-        <button onClick={handleNavigate}>Go to Profile</button>
+        <button onClick={() => navigate("/api/v1/Patient/login/profile")}>Go to Profile</button>
       </div>
       <div className="container">
         <div className="doctor-cards-grid">
@@ -92,7 +112,7 @@ const PatientFirst = () => {
                 doctorName={doctor.name}
                 description={`Specialization: ${doctor.specialization || "N/A"} | Experience: ${doctor.experience || "N/A"} years`}
                 buttonText={"Book Appointment"}
-                buttonLink={"/Userdetails/Patientforms"}
+                onClick={() => handleBookAppointment(doctor._id)} // Send doctor._id on button click
               />
             </div>
           ))}

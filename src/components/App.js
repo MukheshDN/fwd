@@ -25,6 +25,7 @@ import DoctorProfile from "./Doctor/DoctorInterface/Doctorprofile.js";
 import AdminInterface from "./Admin/AdminInterface/AdminInterface.js";
 import PatientAList from "./Admin/AdminInterface/PatientAlist.js";
 import DoctorAlist from "./Admin/AdminInterface/DoctorAlist.js";
+import PatientDetails from "./Doctor/DoctorInterface/PatientDetails.js";
 
 function App() {
   return (
@@ -107,6 +108,16 @@ function App() {
               </div>
             }
           />
+
+            <Route
+            path="/PatientDetails"
+            element={
+              <div>
+                <PatientDetails/>
+              </div>
+            }
+          />
+          
           <Route path="/api/v1/Admin/login" element={<Admin />} />
           <Route path="/api/v1/Doctor/login" element={<Doctor />} />
           <Route path="/api/v1/Patient/login" element={<Patient />} />

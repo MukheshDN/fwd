@@ -3,12 +3,17 @@ import "./Doctorprofile.css"
 import DoctorNavbar from './DoctorNavbar'
 import api from '../../api';
 import { useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom"; // Import useLocation
 
 const DoctorProfile = () => {
 
+  const location = useLocation(); // Access the state passed from PatientFirst.js
+  const { name, email } = location.state || { name: "", email: "" };
+  const [specialization, setSpecialization] = useState(location.state?.specialization || "");
+
+
     const [qualification, setQualification] = useState("");
     const [experience, setExperience] = useState("");
-    const [specialization, setSpecialization] = useState("");
     const [phonenumber, setPhonenumber] = useState("");
     const [InstituteStudied, setInstitutestudied] = useState("");
     const [clinicAddress, setClinicaddress] = useState("");
@@ -32,15 +37,15 @@ const DoctorProfile = () => {
           token,
           qualification,
           experience,
-          specialization,
           clinicAddress,
+          specialization,
           phonenumber,
           InstituteStudied,
         });
   
         if (response.data.success) {
           alert("Update successful!");
-          navigate("/");
+          navigate("/Doctordetails");
         } else {
           setErrorMessage(response.data.message || "Update failed");
         }
@@ -69,9 +74,9 @@ const DoctorProfile = () => {
         <div className="col-md-4 border-right">
             <div className="d-flex flex-column align-items-center text-center p-3 py-5">
                 <img className="profilePicture rounded-circle mt-5" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg" alt="Doctor"/>
-                <span className="font-weight-bold">kalandaar</span>
-                <span className="text-black-50">kalandar@gmail.com</span>
-                <span>diabetic Specialist</span>
+                <span className="font-weight-bold">{name}</span>
+                <span className="text-black-50">{email}</span>
+                <span>{specialization}</span>
             </div>
         </div>
         <div className="col-md-8">
@@ -82,13 +87,13 @@ const DoctorProfile = () => {
                 <div className="row mt-2">
                     <div className="col-md-6">
                         <label className="labels">Full Name</label>
-                        <input type="text" className="form-control"  />
+                        <input type="text" className="form-control" value={name}  />
                     </div>
                     <div className="col-md-6">
                         <label className="labels">Specialization</label>
                         <input type="text" className="form-control" value={specialization}
-                              onChange={(e) => setSpecialization(e.target.value)}
-                              required/>
+                         onChange={(e) => setSpecialization(e.target.value)}
+                         required  />
                     </div>
                 </div>
                 <div className="row mt-3">
@@ -118,7 +123,7 @@ const DoctorProfile = () => {
                     </div>
                     <div className="col-md-12">
                         <label className="labels">Email ID</label>
-                        <input type="text" className="form-control"  />
+                        <input type="text" className="form-control" value={email}  />
                     </div>
                     <div className="col-md-12">
                         <label className="labels">Clinic Address</label>

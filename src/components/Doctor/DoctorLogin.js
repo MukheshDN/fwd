@@ -21,13 +21,13 @@ function DoctorLogin() {
       if (response.data.success) {
         alert("Login successful!");
 
-        const response = await api.post("/api/v1/Doctor/getAllDoctorDetails");
-        console.log(response.data);
+        // const response = await api.post("/api/v1/Doctor/getAllDoctorDetails");
+        // console.log(response.data);
         
         console.log(response.data.token);
         localStorage.setItem("Token", response.data.token);
        
-        navigate("/");
+        navigate("/Doctordetails");
       } else {
         setErrorMessage(response.data.message || "Login failed");
       }

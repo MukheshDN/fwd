@@ -7,7 +7,7 @@ import axios from "axios";
 
 const api = axios.create({
   baseURL:
-  "https://dcb6-2409-40f0-18-5333-1d61-6ac5-7576-344f.ngrok-free.app", // Your backend base URL
+  "https://2ac8-2409-40f2-1040-9504-45b6-71cb-b57f-6acb.ngrok-free.app", // Your backend base URL
   withCredentials: true, // Send cookies if required
 });
 
