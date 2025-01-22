@@ -39,7 +39,7 @@ function PatientLogin() {
       <h1
         style={{
           textAlign: "center",
-          backgroundColor: "rgba( 0, 123, 255,0.85)",
+          backgroundColor: "#5efabb",
         }}
       >
         {" "}

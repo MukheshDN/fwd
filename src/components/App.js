@@ -31,7 +31,7 @@ function App() {
   return (
     <div>
       <Router>
-        <Header />
+        {/* <Header /> */}
         <NavBar />
         <Routes>
           <Route

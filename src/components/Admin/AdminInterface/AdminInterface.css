@@ -47,3 +47,7 @@
 .doctor-button:hover {
   background-color: #008080;
 }
+
+#adminFooter{
+  margin-top:65vh;
+}

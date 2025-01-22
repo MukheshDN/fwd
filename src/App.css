@@ -2,12 +2,14 @@
   display: flex;
   justify-content: center;
   flex-direction: row;
-  background-color: #e3f2fd;
+  /* background-color: #e3f2fd; */
+  
 }
 .card{
   margin:100px;
   display: flex;
   justify-content: center;
+  background-image: "doodles.png";
 }
 
 img{

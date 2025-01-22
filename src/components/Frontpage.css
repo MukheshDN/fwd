@@ -1,0 +1,65 @@
+/* .card {
+    margin: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+} */
+
+/* Card Styling */
+/* Card Styling */
+#card {
+    transition: all 0.3s ease-in-out;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Initial subtle shadow */
+}
+
+/* Card Hover Effect with Glowing Outline */
+.card:hover {
+    transform: translateY(-10px); /* Slightly move the card up */
+    box-shadow: 0 0 15px 5px rgba(48, 139, 231, 0.8); /* Green glow effect */
+}
+
+/* Image Styling */
+.card-img-top {
+    border-radius: 10px 10px 0 0;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Image Hover Effect */
+.card:hover .card-img-top {
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Button Styling */
+.btn {
+    background-color: #007BFF; /* Primary Blue */
+    color: white;
+    border: none;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Button Hover Effect */
+.btn:hover {
+    background-color:#FFA500; /* Green accent */
+      
+    transform: scale(1.1); /* Slightly enlarge the button */
+}
+
+.comp{
+    background-image: "./doodles.png";
+}
+
+.logoTitle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(148, 214, 255);
+    height: 80px;
+    width: 250px;
+    border-radius: 25px;
+   
+}
+
+.comp{
+    background-color: rgba(143, 232, 248, 0.211);
+}

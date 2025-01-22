@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
 
 
 .content{
@@ -8,7 +8,7 @@
 
 .items{
   font-weight: 800;
-  color:#0044cc;
+  color:black;
   text-decoration: underline;
   font-family: "PT Serif", serif;
   font-size:1.2rem;
@@ -16,7 +16,7 @@
 
 .main-nav{
   padding:unset;
-  margin-top: 40px;
+  
 }
 .navbar>.container-fluid{
   background-color:#bbdefb;
@@ -36,3 +36,181 @@
     border-radius: 20%;
     
 }
+
+.nav1{
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ background-color: #1785fb;;
+}
+
+.title1{
+  color:black;
+
+  font-family:  'Times New Roman', Times, serif;
+
+}
+.container-fluid nav{
+  background-color: blue;
+
+}
+
+#navB{
+  background-color: #1785fb;;
+}
+ */
+
+ @import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Main Navigation Bar */
+.navbar > .container-fluid {
+  background-color: #bbdefb; /* Light Blue Background */
+  height: 100px;
+  padding: 10px 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle Shadow Effect */
+  transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+
+.navbar > .container-fluid:hover {
+  background-color: #94c6f8; /* Slightly Darker Blue on Hover */
+}
+
+/* Logo */
+.logo {
+  height: 50px;
+  width: 50px;
+  border-radius: 20%;
+  transition: transform 0.3s ease; /* Add smooth scaling effect */
+}
+
+.logo:hover {
+  transform: scale(1.1); /* Scale up the logo slightly on hover */
+}
+
+/* Navigation Bar Links */
+.ul {
+  width: 700px;
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  position: fixed;
+  position:absolute;
+  right:3vh;
+  justify-content: space-evenly;
+}
+
+.items {
+  font-weight: 800;
+  color: black;
+  text-decoration: underline;
+  font-family: "PT Serif", serif;
+  font-size: 1.2rem;
+ 
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.items:hover {
+  color: #ffffff; /* Blue hover effect */
+  transform: scale(1.05); /* Slightly enlarge the text on hover */
+}
+
+/* Underline Animation Effect */
+.items::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  display: block;
+  background: #ececec; /* Underline color */
+  transition: width 0.3s ease;
+  left: 0;
+  bottom: -5px;
+}
+
+.items:hover::after {
+  width: 100%; /* Expand underline on hover */
+}
+
+/* Title */
+.title1 {
+  color: black;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1.8rem;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .ul {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .items {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+
+  .navbar > .container-fluid {
+    height: auto;
+    padding: 15px;
+  }
+
+  .title1 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Navbar Background */
+.nav1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1785fb;
+  transition: all 0.3s ease;
+}
+
+.nav1:hover {
+  background-color: yellow; /* Slightly Darker Shade on Hover */
+}
+
+/* Mobile View */
+@media (max-width: 550px) {
+  .nav1 {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .ul {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .items {
+    margin: 5px 0;
+  }
+}
+
+.container-fluid nav {
+  background-color: #1785fb;
+}
+
+#navB {
+  background-color: #1785fb;
+  
+}
+
+/* Smooth Transitions for All Elements */
+.navbar, .nav-link, .logo, .items, .title1 {
+  transition: all 0.3s ease;
+}
+
+.nav1{
+  padding: 0px;
+}
+

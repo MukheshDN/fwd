@@ -4,10 +4,14 @@ import "./NavBar.css"; // Ensure your CSS file is properly imported
 const NavBar = () => {
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary main-nav nav1">
-      <div className="container-fluid nav">
-        <a className="navbar-brand" href="#">
+     <div className="container-fluid nav" id="navB">
+        {/* <a className="navbar-brand" href="#">
           <img className="logo"  src="logo1.png" alt="logoimage"></img>
         </a>
+         */}
+         <div className="logoTitle">
+      <h1 className="title1">Health Connect +</h1>
+      </div>
         <button
           className="navbar-toggler"
           type="button"

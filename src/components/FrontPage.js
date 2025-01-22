@@ -1,4 +1,5 @@
 import React from "react";
+import "./Frontpage.css"
 import 'semantic-ui-css/semantic.min.css'; 
 import { Button } from 'semantic-ui-react'
 import {Link} from "react-router-dom";
@@ -20,12 +21,12 @@ const FrontPage = () => {
     
       <div className="comp">
   <Link to="/api/v1/Doctor/login ">
-   <div className="card" style={{ width: '18rem' }}>
-      <img className="card-img-top" src="doctor.jpg" alt="Card image cap" />
+   <div className="card" style={{ width: '18rem' }} id="card">
+      <img className="card-img-top" src="doctor.jpg" alt="Card image cap"  id="card-img-top" />
       <div className="card-body">
         <h5 className="card-title">Doctor Login</h5>
         
-        <a href="#" className="btn btn-primary">LOGIN</a>
+        <a href="#" className="btn btn-secondary">LOGIN</a>
       </div>
     </div>
 
@@ -33,12 +34,12 @@ const FrontPage = () => {
       </Link>
       <Link to="/api/v1/Patient/login ">
       
-      <div className="card" style={{ width: '18rem' }}>
-      <img className="card-img-top img1" src="patient.jpg" alt="Card image cap" />
+      <div className="card" style={{ width: '18rem' }} id="card">
+      <img className="card-img-top img1" src="patient.jpg" alt="Card image cap" id="card-img-top"/>
       <div className="card-body">
         <h5 className="card-title">Patient Login</h5>
         
-        <a href="#" className="btn btn-primary">LOGIN</a>
+        <a href="#" className="btn btn-secondary">LOGIN</a>
       </div>
     </div>
       </Link>

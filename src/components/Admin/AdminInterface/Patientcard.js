@@ -9,6 +9,7 @@ const Patientcard = ({  name, phone }) => {
       <p>Phone: {phone}</p>
       <button className="delete-button">Delete</button>
     </div>
+    
   );
 };
 
